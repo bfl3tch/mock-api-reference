@@ -1,0 +1,99 @@
+<br/><h1 align="center">
+  <div align="center">
+    <div class="card navbar-custom" style="width: rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+<h1 align="center">Merchant Mock API Endpoint Reference</h1><br/>
+<h5 align="center">Valid merchant IDs are between 1 - 100 </h5>
+<h5 align="center">Valid item IDs are between 1 - 2483 </h5>
+<h5 align="center">CAPS represent query parameters </h5>
+<h4 align="center"><br/><br/>
+  <table class="table table-striped navbar-custom table-hover table-bordered">
+    <thead class="navbar-custom blacktext"> EXPOSED ENDPOINTS <br/><br/>
+      <tr>
+        <th scope="col">Routes</th>
+        <th scope="col">What they do</th>
+        <th scope="col">Params Required?</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">mock-market-api.herokuapp.com/api/v1/items?page=NUMBER&per_page=NUMBER</th>
+        <td>Get info for all items</td>
+        <td>No, defaults to 20 per page</td>
+      </tr>
+      <tr>
+        <th scope="row">mock-market-api.herokuapp.com/api/v1/items/NUMBER</th>
+        <td>Get info about one item</td>
+        <td>Must be valid item ID</td>
+      </tr>
+    <tr>
+      <th scope="row">mock-market-api.herokuapp.com/api/v1/items</th>
+      <td>CRUD item</td>
+      <td><strong>Post</strong>: body requires "name", "description", "unit_price", "merchant_id"</td>
+    </tr>
+    <tr>
+      <th scope="row">mock-market-api.herokuapp.com/api/v1/items/NUMBER/merchant</th>
+      <td>Get info about one item's merchant</td>
+      <td>Must be valid item ID</td>
+    </tr>
+    <tr>
+      <th scope="row">mock-market-api.herokuapp.com/api/v1/merchants?page=NUMBER&per_page=NUMBER</th>
+      <td>Get info for all merchants</td>
+      <td>No, defaults to 20 per page</td>
+    </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/merchant/NUMBER</th>
+    <td>Get info about one merchant</td>
+    <td>Must be valid merchant ID</td>
+  </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/merchants/NUMBER/items</th>
+    <td>Get info about one merchant's items</td>
+    <td>Must be valid merchant ID</td>
+  </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/merchants/find_all?name=SEARCH</th>
+    <td>All merchants matching search</td>
+    <td>Yes; partial name matches will be returned</td>
+  </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/items/find?name=SEARCH</th>
+    <td>First alphabetical item matching search</td>
+    <td>Yes; partial name matches will be returned</td>
+  </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/items/find?min_price=NUMBER&max_price=NUMBER</th>
+    <td>Search for highest priced item by min/max prices</td>
+    <td>At least one, can be both</td>
+  </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/revenue/merchants?quantity=NUMBER</th>
+    <td>Return quantiy of merchants ranked by revenue</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/revenue/merchants/NUMBER</th>
+    <td>Get revenue for single merchant</td>
+    <td>Must be valid merchant ID</td>
+  </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/revenue/items?quantity=NUMBER</th>
+    <td>Get revenue for single merchant</td>
+    <td>No, defaults to 10</td>
+  </tr>
+  <tr>
+    <th scope="row">mock-market-api.herokuapp.com/api/v1/revenue/unshipped?quantity=NUMBER</th>
+    <td>Merchants with most unshipped successful sales</td>
+    <td>No, defaults to 10</td>
+  </tr>
+
+      </tr>
+    </tbody>
+  </table><br/>
+  <a href="https://github.com/bfl3tch" class="btn btn-sm btn-dark navbar-custom blacktext">Github Profile</a>
+  <a href="https://github.com/bfl3tch/rails-engine" class="btn btn-lg btn-dark navbar-custom blacktext">API Repo</a>
+  <a href="https://www.linkedin.com/in/bfl3tch/" class="btn btn-sm btn-dark navbar-custom blacktext">LinkedIn</a>
+  <br/><hr>
+  © Brian Fletcher

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Merchant Mock API</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </head>
+
+
+  <body>
+    <%= render partial: 'welcome/header', locals: { placeholder: ''} %>
+    <br/><br/><br/>
+
+    <% flash.each do |type, msg| %>
+    <div align="center">
+      <div class="alert alert-info alert-dismissible btn btn-lg navbar-custom">
+        <%= msg  %>
+      </div>
+    </div>
+    <% end %>
+
+    <main class='container'<br/>
+      <%= yield %>
+    </main><br/><br/><br/><br/><br/>
+
+      <%= render partial: 'welcome/footer', locals: { placeholder: ''} %>
+
+  </body>
+
+
+
+</html>
